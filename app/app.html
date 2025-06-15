@@ -1,0 +1,26 @@
+<mat-card class="card login-card container border-white card-xl" appearance="outlined">
+  <div class="row">
+    <div mat-card-image class="col col-md-5 col-lg-5 g-0 d-flex d-md-flex column-left overflow">
+      <video class="full" autoplay loop muted>
+        <source src="https://brand.securitas.com/wp-content/uploads/2021/02/SECU_dot_space_perspective_compresssed_04.mp4" type="video/mp4">
+      </video>
+    </div>
+    <mat-card-content class="col col-md-7 col-lg-7 card-body justify-content-center d-flex flex-column align-items-center ">
+      <div class="login-header-image">
+        <img mat-card-image class="login-header-logo" src="https://securitasmedia.com/securitas-epi/_Protectas_Logotype_RedWhite_RGB.svg" alt="Logo mit 3 Punkten">
+      </div>
+      <form class="login-form">
+        <div class="form-outline mb-4">
+          <input type="email" id="email" class="form-control form-control-lg" required />
+          <label class="form-label" for="email">Email-Adresse</label>
+        </div>
+        <div class="form-outline mb-4">
+          <input type="password" id="password" class="form-control form-control-lg" required />
+          <label class="form-label" for="password">Passwort</label>
+        </div>
+      </form>
+    </mat-card-content>
+  </div>
+</mat-card>
+
+<router-outlet />

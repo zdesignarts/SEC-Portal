@@ -1,0 +1,61 @@
+<div class="dashboard-container mat-typography">
+
+  <!-- KPI Cards -->
+  <div mat-grid-list class="kpi-cards mat-grid-list" cols="4" rowHeight="150px" gutterSize="16px">
+    <div mat-grid-tile *ngFor="let kpi of kpiList">
+      <div mat-card class="kpi-card">
+        <div mat-card-content>
+          <div class="kpi-header">
+            <div mat-icon>{{ kpi.icon }}</div>
+            <span class="kpi-title">{{ kpi.title }}</span>
+          </div>
+          <div class="kpi-value">{{ kpi.value }}</div>
+          <div class="kpi-footer">{{ kpi.label }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Charts -->
+  <app-chart class="charts"></app-chart>
+
+  <!-- Table + Activity List -->
+  <div mat-grid-list class="lower-section mat-grid-list" cols="2" rowHeight="auto" gutterSize="16px">
+    <div mat-grid-tile>
+      <div mat-card>
+        <div mat-card-header>
+          <div mat-card-title>Top Products</div>
+        </div>
+        <div mat-card-content>
+          <table mat-table [dataSource]="productData">
+            <!-- Columns definition... -->
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef>Name</th>
+              <td mat-cell *matCellDef="let el">{{ el.name }}</td>
+            </ng-container>
+            <!-- weitere Spalten -->
+            <tr mat-header-row *matHeaderRowDef="productColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: productColumns;"></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div mat-grid-tile>
+      <div mat-card>
+        <div mat-card-header>
+          <div mat-card-title>Recent Activity</div>
+        </div>
+        <div mat-card-content>
+          <div mat-list>
+            <div mat-list-item *ngFor="let act of activityList; let i = index">
+              <div mat-icon mat-list-icon>{{ act.icon }}</div>
+              <h4 mat-line>{{ act.title }}</h4>
+              <p mat-line>{{ act.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,87 @@
+// Protectas Farbschema & Layout
+$primary-color: #e30613
+$background-dark: #1d1d1d
+$background-light: #f4f4f4
+$text-color: #ffffff
+$card-bg: #2a2a2a
+$border-radius: 12px
+
+.dashboard-container
+  background-color: $background-dark
+  color: $text-color
+  padding: 24px
+
+  mat-card
+    background-color: $card-bg
+    border-radius: $border-radius
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6)
+    transition: transform 0.2s ease
+
+    &:hover
+      transform: translateY(-2px)
+
+    mat-card-header
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1)
+      margin-bottom: 8px
+
+      mat-card-title
+        font-size: 1.2rem
+        font-weight: bold
+        color: $primary-color
+
+    mat-card-content
+      font-size: 0.95rem
+
+  .kpi-card
+    display: flex
+    flex-direction: column
+    justify-content: center
+
+    .kpi-header
+      display: flex
+      align-items: center
+      margin-bottom: 8px
+
+      mat-icon
+        font-size: 28px
+        color: $primary-color
+        margin-right: 10px
+
+      .kpi-title
+        font-size: 1rem
+        font-weight: 600
+
+    .kpi-value
+      font-size: 2rem
+      font-weight: 700
+      color: #ffffff
+
+    .kpi-footer
+      font-size: 0.875rem
+      color: rgba(255, 255, 255, 0.6)
+
+  table
+    width: 100%
+    color: #ffffff
+
+    th
+      background: rgba(255, 255, 255, 0.05)
+      font-weight: 600
+      color: $primary-color
+
+    td
+      padding: 12px 8px
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1)
+
+  mat-list-item
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1)
+
+    mat-icon
+      color: $primary-color
+
+    h4
+      font-weight: 600
+
+    p
+      font-size: 0.85rem
+      color: rgba(255, 255, 255, 0.75)
